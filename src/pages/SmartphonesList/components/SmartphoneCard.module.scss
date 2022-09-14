@@ -1,0 +1,37 @@
+.cardWrapper { 
+    border-radius: 10px;
+    width: 20%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: 4px 4px 11px -4px rgba(102,102,102,0.63); 
+    box-shadow: 4px 4px 11px -4px rgba(146, 146, 146, 0.63);
+}
+
+.imgContainer {
+    align-self: center;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    gap: 10px
+}
+
+.productPrice {
+    font-weight: 800;
+    color: #156064;
+}
+
+.addCartBtn {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #00C49A;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

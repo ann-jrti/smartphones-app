@@ -5,7 +5,7 @@ import {
   Routes,
   BrowserRouter } from 'react-router-dom';
 import { SmartphoneDetails } from './pages/SmartphoneDetails';
-import { SmartphonesList } from './pages/ProductList';
+import { SmartphonesList } from './pages/SmartphonesList';
 
 function App() {
   return (

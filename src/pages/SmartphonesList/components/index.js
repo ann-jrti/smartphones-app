@@ -1,0 +1,1 @@
+export {SmartphoneCard} from './SmartphoneCard';
