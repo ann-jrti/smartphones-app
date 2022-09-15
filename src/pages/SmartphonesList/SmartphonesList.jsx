@@ -13,7 +13,6 @@ export const SmartphonesList = () => {
 
     useEffect(() => {
         if (smartphonesList.length === 0) {
-            console.log('about to fire dispatch')
             dispatch(getSmartphones())
         }
         
@@ -24,6 +23,7 @@ export const SmartphonesList = () => {
             return(
                 <SmartphoneCard
                     key={product.id}
+                    id={product.id}
                     img={product.imgUrl}
                     brand={product.brand}
                     model={product.model}

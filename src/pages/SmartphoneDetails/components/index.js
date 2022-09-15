@@ -1,0 +1,1 @@
+export {SmartphoneDescription} from './SmartphoneDescription'

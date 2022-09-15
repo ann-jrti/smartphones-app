@@ -6,7 +6,11 @@
     border-radius: 20px;
     background: #ffffff;
     box-shadow:  20px 20px 60px #d9d9d9,
-                 -20px -20px 60px #ffffff;
+                -20px -20px 60px #ffffff;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .imgContainer {
