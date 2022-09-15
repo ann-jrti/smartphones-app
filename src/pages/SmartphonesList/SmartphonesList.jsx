@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { getProductsList } from '../../api/requests';
-import { smartphonesListSelector } from '../../state/smartphones/smartphonesSlice';
+import { filteredSmartphonesSelector, smartphonesListSelector } from '../../state/smartphones/smartphonesSlice';
 import { getSmartphones } from '../../state/smartphones/smartphonesThunk';
 import { SmartphoneCard } from './components';
 
@@ -9,19 +8,19 @@ import styles from './SmartphonesList.module.scss';
 
 export const SmartphonesList = () => {
     const smartphonesList = useSelector(smartphonesListSelector);
+    const filteredSmartphones = useSelector(filteredSmartphonesSelector);
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (smartphonesList.length === 0) {
+            console.log('about to fire dispatch')
             dispatch(getSmartphones())
-            console.log(smartphonesList)
         }
-    }, [dispatch])
+        
+    }, [])
 
-    return(
-        <section className={styles.productsWrapper}>
-        <p>hi</p>
-        {smartphonesList.map(product => {
+    const renderList = (array) => {
+        return array.map(product => {
             return(
                 <SmartphoneCard
                     key={product.id}
@@ -31,7 +30,12 @@ export const SmartphonesList = () => {
                     price={product.price}
                 />
             )
-        })} 
+        })
+    }
+
+    return(
+        <section className={styles.productsWrapper}>
+        {filteredSmartphones.length !== 0 ? renderList(filteredSmartphones) : renderList(smartphonesList)} 
         </section>
         
         

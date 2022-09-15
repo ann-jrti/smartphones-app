@@ -6,21 +6,26 @@ import {
   BrowserRouter } from 'react-router-dom';
 import { SmartphoneDetails } from './pages/SmartphoneDetails';
 import { SmartphonesList } from './pages/SmartphonesList';
+import { Header, SearchBar } from './components';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-          <Route
-          path='/'
-          element={<SmartphonesList />}
-          />
-          <Route
-          path='/:id'
-          element={<SmartphoneDetails />}
-          />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Header />
+      <SearchBar />
+      <BrowserRouter>
+        <Routes>
+            <Route
+            path='/'
+            element={<SmartphonesList />}
+            />
+            <Route
+            path='/:id'
+            element={<SmartphoneDetails />}
+            />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
