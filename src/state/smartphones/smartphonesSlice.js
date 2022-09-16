@@ -43,5 +43,4 @@ export const smartphoneDetailsSelector = (store) => {
   return store.smartphones.smartphoneDetails
 };
 
-
 export default smartphonesSlice.reducer

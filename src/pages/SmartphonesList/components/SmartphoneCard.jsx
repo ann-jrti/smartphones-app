@@ -25,12 +25,12 @@ export const SmartphoneCard = ({
                 <h4 className={styles.productBrand}>{brand}</h4>
             </div>
                 <div className={styles.priceContainer}>
-                    <p className={styles.productPrice}>{price ? `${price}€` : 'Price not available'}</p>
+                    <p className={styles.productPrice}>{price ? `${price}€` : 'Out of stock'}</p>
                 </div>
             </div>
             <CustomBtn
-                    onChildClick={handleClick}
-                    text='View details'
+                onChildClick={handleClick}
+                text='View details'
             />
         </article>
     )

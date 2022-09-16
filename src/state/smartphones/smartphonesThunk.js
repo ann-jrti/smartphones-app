@@ -2,7 +2,6 @@ import { getProductDetails, getProductsList } from '../../api/requests';
 import { setCookie } from '../../cookies';
 import { setSmarthonesList, setSmartphoneDetails } from './smartphonesSlice';
 
-
 export const getSmartphones = () => (
     async dispatch => {
         // dispatch(setLoading(true));

@@ -16,7 +16,6 @@ export const SmartphonesList = () => {
         if (smartphonesList.length === 0) {
             dispatch(getSmartphones())
         }
-        
     }, [])
 
     const renderList = (array) => {
@@ -38,10 +37,10 @@ export const SmartphonesList = () => {
         <>
             <SearchBar />
             <section className={styles.productsWrapper}>
-        {filteredSmartphones.length !== 0 ? renderList(filteredSmartphones) : renderList(smartphonesList)} 
-        </section>
+                {filteredSmartphones.length !== 0
+                ? renderList(filteredSmartphones)
+                : renderList(smartphonesList)} 
+            </section>
         </>
-        
-        
     )
 }

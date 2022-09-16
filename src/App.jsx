@@ -3,7 +3,8 @@ import './App.scss';
 import {
   Route,
   Routes,
-  BrowserRouter } from 'react-router-dom';
+  BrowserRouter
+} from 'react-router-dom';
 import { SmartphoneDetails } from './pages/SmartphoneDetails';
 import { SmartphonesList } from './pages/SmartphonesList';
 import { Header } from './components';

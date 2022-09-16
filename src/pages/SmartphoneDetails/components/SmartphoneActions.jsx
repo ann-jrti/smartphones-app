@@ -1,15 +1,20 @@
 import React from 'react';
 import { useFormik } from 'formik'
-import { InputLabel, MenuItem, Select, FormHelperText, FormControl } from '@mui/material';
+import {
+    InputLabel,
+    MenuItem,
+    Select,
+    FormHelperText, 
+    FormControl, 
+    Typography 
+} from '@mui/material';
 
 import styles from './SmartphoneActions.module.scss';
 import { CustomBtn } from '../../../components/CustomBtn';
-// import { addProductToCart } from '../../../api/requests';
-// import { getCookie, setCookie } from '../../../cookies';
 import { useDispatch } from 'react-redux';
 import { getCart } from '../../../state/cart/cartThunk';
 
-export const SmartphoneActions = ({colors, storages, id}) => {
+export const SmartphoneActions = ({colors, storages, id, price}) => {
 console.log('render')
     const dispatch = useDispatch()
     const formik = useFormik({
@@ -35,7 +40,9 @@ console.log('render')
     const storageOptions = getMenuItems(storages)
 
     return (
-        <form onSubmit={formik.handleSubmit} className={styles.formWrapper}>
+        <form
+            onSubmit={formik.handleSubmit}
+            className={styles.formWrapper}>
             <FormControl fullWidth>
                 <InputLabel id="color">Select a color</InputLabel>
                     <Select
@@ -66,7 +73,9 @@ console.log('render')
                 <FormHelperText>Required</FormHelperText>
             </FormControl>
     
-            <CustomBtn text='Add to cart' />
+            {price ?
+            <CustomBtn text="Add to cart" />
+            : <Typography level='h4'>Out of stock</Typography>}
         </form>
     );
 }

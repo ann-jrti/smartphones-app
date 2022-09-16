@@ -13,11 +13,11 @@ export const SearchBar = () => {
           s.model.toLowerCase().includes(e.target.value.toLowerCase())
           || s.brand.toLowerCase().includes(e.target.value.toLowerCase())
         );
-
+        
         if (newFilter) {
             dispatch(setFilteredSmartphones(newFilter))
           }  
-      };
+        };
 
     return(
         <div className={styles.searchBarContainer}>

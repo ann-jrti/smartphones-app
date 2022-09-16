@@ -11,7 +11,7 @@ export const SmartphoneDescription = (props) => {
         <div className={styles.descriptions}>
             <p><span>Model </span>{props.brand} {props.model}</p>
 
-            <p><span>Price </span>{props.price} €</p>
+            <p><span>Price </span>{props.price ? `${props.price}€` : 'Not available'}</p>
 
             <p><span>CPU </span>{props.cpu}</p>
 
@@ -19,7 +19,7 @@ export const SmartphoneDescription = (props) => {
 
             <p><span>Resolution </span>{props.displayResolution}</p>
 
-            <p><span>Battery </span>{props.battery}</p>
+            <p><span>Battery </span>{props.battery ? props.battery : 'Not available'}</p>
 
             <p><span>Primary camera </span>{typeof props.primaryCamera === 'object' ?
                         getCamerasFeatures(props.primaryCamera)
@@ -29,8 +29,8 @@ export const SmartphoneDescription = (props) => {
                         getCamerasFeatures(props.secondaryCmera)
                         : props.secondaryCmera}</p>
 
-            <p><span>Dimentions </span>{props.dimentions}</p>
+            <p><span>Dimentions </span>{props.dimentions ? props.dimentions : 'Not available' }</p>
 
-            <p><span>Weight </span>{props.weight} g</p>
+            <p><span>Weight </span>{props.weight ? `${props.weight} g` : 'Not available'}</p>
         </div>)
 }
