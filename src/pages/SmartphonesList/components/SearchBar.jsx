@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {setFilteredSmartphones, smartphonesListSelector } from '../state/smartphones/smartphonesSlice';
+import {setFilteredSmartphones, smartphonesListSelector } from '../../../state/smartphones/smartphonesSlice';
 import styles from './SearchBar.module.scss';
 import SearchIcon from '@mui/icons-material/Search';
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { filteredSmartphonesSelector, smartphonesListSelector } from '../../state/smartphones/smartphonesSlice';
 import { getSmartphones } from '../../state/smartphones/smartphonesThunk';
 import { SmartphoneCard } from './components';
+import { SearchBar } from './components/SearchBar';
 
 import styles from './SmartphonesList.module.scss';
 
@@ -34,9 +35,12 @@ export const SmartphonesList = () => {
     }
 
     return(
-        <section className={styles.productsWrapper}>
+        <>
+            <SearchBar />
+            <section className={styles.productsWrapper}>
         {filteredSmartphones.length !== 0 ? renderList(filteredSmartphones) : renderList(smartphonesList)} 
         </section>
+        </>
         
         
     )

@@ -1,9 +1,10 @@
 .searchBarContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: row;
     align-items: center;
     margin-top: 50px;
+    margin-right: 80px;
     gap: 5px;
 }
 
@@ -13,7 +14,7 @@
     padding-left: 10px;
     border: 1px solid #606C38;
     border-radius: 5px;
-    
+
     &:focus {
         outline: none;
         border-color: #BC6C25

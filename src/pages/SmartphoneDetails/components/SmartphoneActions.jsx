@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 import { InputLabel, MenuItem, Select, FormHelperText, FormControl } from '@mui/material';
 
 import styles from './SmartphoneActions.module.scss';
-import { AddToCartBtn } from '../../../components/AddToCartBtn';
+import { CustomBtn } from '../../../components/CustomBtn';
 // import { addProductToCart } from '../../../api/requests';
 // import { getCookie, setCookie } from '../../../cookies';
 import { useDispatch } from 'react-redux';
@@ -66,7 +66,7 @@ console.log('render')
                 <FormHelperText>Required</FormHelperText>
             </FormControl>
     
-            <AddToCartBtn />
+            <CustomBtn text='Add to cart' />
         </form>
     );
 }

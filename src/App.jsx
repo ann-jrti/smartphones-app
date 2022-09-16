@@ -6,13 +6,12 @@ import {
   BrowserRouter } from 'react-router-dom';
 import { SmartphoneDetails } from './pages/SmartphoneDetails';
 import { SmartphonesList } from './pages/SmartphonesList';
-import { Header, SearchBar } from './components';
+import { Header } from './components';
 
 function App() {
   return (
     <>
       <Header />
-      <SearchBar />
       <BrowserRouter>
         <Routes>
             <Route

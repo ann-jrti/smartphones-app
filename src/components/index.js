@@ -1,4 +1,3 @@
 export {Header} from './Header';
-export {SearchBar} from './SearchBar';
-export {AddToCartBtn} from './AddToCartBtn';
+export {CustomBtn} from './CustomBtn';
 export {Cart} from './Cart';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AddToCartBtn } from '../../../components/AddToCartBtn';
+import { CustomBtn } from '../../../components/CustomBtn';
 import styles from './SmartphoneCard.module.scss';
 
 export const SmartphoneCard = ({
@@ -12,11 +12,10 @@ export const SmartphoneCard = ({
 }) => {
     
     const navigate = useNavigate()
+    const handleClick = () => navigate(`/${id}`);
 
     return (
-        <article
-        className={styles.cardWrapper}
-        onClick={() => navigate(`/${id}`)}>
+        <article className={styles.cardWrapper}>
             <div className={styles.imgContainer}>
                 <img className={styles.productImg} src={img} />
             </div>
@@ -29,7 +28,10 @@ export const SmartphoneCard = ({
                     <p className={styles.productPrice}>{price ? `${price}€` : 'Price not available'}</p>
                 </div>
             </div>
-            <AddToCartBtn />
+            <CustomBtn
+                    onChildClick={handleClick}
+                    text='View details'
+            />
         </article>
     )
 }
