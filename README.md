@@ -1,6 +1,6 @@
 # Mini smartphones app!
 
-## How to launch the project
+## Run the app
 ```
 npm start
 ```
