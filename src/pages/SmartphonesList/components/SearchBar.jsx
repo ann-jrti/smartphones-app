@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {setFilteredSmartphones, smartphonesListSelector } from '../../../state/smartphones/smartphonesSlice';
 import styles from './SearchBar.module.scss';
 import SearchIcon from '@mui/icons-material/Search';
+import { setFilteredSmartphones, smartphonesListSelector } from '../../../state/smartphones/smartphonesSlice';
 
 export const SearchBar = () => {
     const allSmartphones = useSelector(smartphonesListSelector);
@@ -13,11 +13,11 @@ export const SearchBar = () => {
           s.model.toLowerCase().includes(e.target.value.toLowerCase())
           || s.brand.toLowerCase().includes(e.target.value.toLowerCase())
         );
-        
+
         if (newFilter) {
             dispatch(setFilteredSmartphones(newFilter))
           }  
-        };
+      };
 
     return(
         <div className={styles.searchBarContainer}>

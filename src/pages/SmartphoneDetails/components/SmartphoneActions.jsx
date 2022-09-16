@@ -1,21 +1,15 @@
 import React from 'react';
 import { useFormik } from 'formik'
-import {
-    InputLabel,
-    MenuItem,
-    Select,
-    FormHelperText, 
-    FormControl, 
-    Typography 
-} from '@mui/material';
+import { InputLabel, Typography, MenuItem, Select, FormHelperText, FormControl } from '@mui/material';
 
 import styles from './SmartphoneActions.module.scss';
 import { CustomBtn } from '../../../components/CustomBtn';
+// import { addProductToCart } from '../../../api/requests';
+// import { getCookie, setCookie } from '../../../cookies';
 import { useDispatch } from 'react-redux';
 import { getCart } from '../../../state/cart/cartThunk';
 
 export const SmartphoneActions = ({colors, storages, id, price}) => {
-console.log('render')
     const dispatch = useDispatch()
     const formik = useFormik({
         initialValues: {
@@ -75,7 +69,7 @@ console.log('render')
     
             {price ?
             <CustomBtn text="Add to cart" />
-            : <Typography level='h4'>Out of stock</Typography>}
+            :  <Typography level='h4'>Out of stock</Typography>}
         </form>
     );
 }

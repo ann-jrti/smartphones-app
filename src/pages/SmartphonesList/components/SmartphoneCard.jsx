@@ -13,7 +13,7 @@ export const SmartphoneCard = ({
     
     const navigate = useNavigate()
     const handleClick = () => navigate(`/${id}`);
-
+    
     return (
         <article className={styles.cardWrapper}>
             <div className={styles.imgContainer}>

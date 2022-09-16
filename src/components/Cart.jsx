@@ -1,7 +1,6 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import styles from './Cart.module.scss';
-
 export const Cart = ({cartItems}) => {
     return (
         <Typography

@@ -1,48 +1,49 @@
-import React, { useEffect } from 'react';
 import { Typography } from '@mui/material';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getCookie } from '../../cookies';
+//import { removeCookie } from '../../cookies/removeCookie';
+import { smartphoneDetailsSelector } from '../../state/smartphones/smartphonesSlice';
 import { getSmartphoneDetails } from '../../state/smartphones/smartphonesThunk';
 import { SmartphoneActions, SmartphoneDescription } from './components';
 import styles from './SmartphoneDetails.module.scss'
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 export const SmartphoneDetails = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
+    const currentSmartphone = useSelector(smartphoneDetailsSelector)
+    console.log(currentSmartphone)
     let alreadyCheckedSmartphone;
     if (getCookie(id)) {
         alreadyCheckedSmartphone = JSON.parse(getCookie(id))
     }
 
     useEffect(() => {
+        console.log('renders')
         if (!alreadyCheckedSmartphone) {
+            
+            //removeCookie(currentSmartphone.id)
+            console.log('here')
             dispatch(getSmartphoneDetails(id))
         } 
+        // return () => {
+        //     removeCookie(id)
+        // };
     }, [dispatch])
 
     return (
-        <>
+        <section className={styles.pdp}>
             {alreadyCheckedSmartphone && 
-                <section
-                    className={styles.pdp}
-                    style={{display: 'flex', gap: '50px;'}}
-                    >
-                    <div className={styles.imgBtnWrapper}>
+                <div style={{display: 'flex', gap: '50px;'}}>
+                    <div className={styles.goBackBtnWrapper}>
                         <button
                             className={styles.goBackBtn}
                             onClick={() => navigate('/')}
                             >
-                            <Typography
-                                style={{display: 'flex'}}
-                                variant='body1'
-                                >
-                                    <span>
-                                        <ArrowBackIosIcon style={{color: '#606C38'}} />
-                                    </span>Go back
+                            <Typography variant='body1'>
+                                <span>←</span>Go back
                             </Typography>
                         </button>
                             <div className={styles.productImgContainer}>
@@ -63,8 +64,8 @@ export const SmartphoneDetails = () => {
                             />
                         </div>
                     </div>
-                </section> 
+                </div> 
             }
-        </>
+        </section>
     )
 }
