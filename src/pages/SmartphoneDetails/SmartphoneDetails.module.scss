@@ -1,8 +1,11 @@
 .pdp {
     display: flex;
-    gap: -200px;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 60px;
+    width: 100vw;
+    margin: 20px;
 }
 .productImgContainer {
     display: flex;
@@ -22,6 +25,30 @@
         align-self: flex-end;
         margin-left: 180px;
         margin-bottom: 5px;
-        color: rgb(19, 9, 58);
+        color: #DDA15E;
+    }
+}
+
+.goBackBtnWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.goBackBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    border: 0;
+    background-color: transparent;
+    span {
+        margin-right: 5px;
+        font-size: 20px;
+    }
+    &:hover {
+        cursor: pointer;
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AddToCartBtn } from '../../../components/AddToCartBtn';
 import styles from './SmartphoneCard.module.scss';
 
 export const SmartphoneCard = ({
@@ -28,8 +29,7 @@ export const SmartphoneCard = ({
                     <p className={styles.productPrice}>{price ? `${price}€` : 'Price not available'}</p>
                 </div>
             </div>
-            <button
-            className={styles.addCartBtn}>Add to cart</button>
+            <AddToCartBtn />
         </article>
-)
+    )
 }

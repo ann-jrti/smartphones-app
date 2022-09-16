@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './SmartphoneDescription.module.scss';
 
-
 export const SmartphoneDescription = (props) => {
     const getCamerasFeatures = arr => {
         return(
@@ -12,7 +11,7 @@ export const SmartphoneDescription = (props) => {
         <div className={styles.descriptions}>
             <p><span>Model </span>{props.brand} {props.model}</p>
 
-            <p><span>Price </span>{props.price}</p>
+            <p><span>Price </span>{props.price} €</p>
 
             <p><span>CPU </span>{props.cpu}</p>
 

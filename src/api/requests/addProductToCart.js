@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-export const addProductToCart = async () => {
+export const addProductToCart = async (data) => {
     try {
-        await axios.post('https://front-test-api.herokuapp.com/api/cart')
+        const response = await axios.post('https://front-test-api.herokuapp.com/api/cart', data)
+        return response
     } catch (error) {
         console.error(error)
     }
