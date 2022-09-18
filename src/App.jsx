@@ -11,8 +11,8 @@ import { Header } from './components';
 function App() {
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
             <Route
             path='/'

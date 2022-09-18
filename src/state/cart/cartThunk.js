@@ -15,9 +15,6 @@ export const getCart = (data) => (
                 cartCookie += 1
                 setCookie('cart', cartCookie)
             }
-            
-            console.log(cartCookie)
-           // localStorage.setItem('cart', JSON.stringify(smartphones.data))
         }
     }
 );
