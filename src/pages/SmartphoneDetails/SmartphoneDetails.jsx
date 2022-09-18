@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getCookie } from '../../cookies';
-//import { removeCookie } from '../../cookies/removeCookie';
 import { smartphoneDetailsSelector } from '../../state/smartphones/smartphonesSlice';
 import { getSmartphoneDetails } from '../../state/smartphones/smartphonesThunk';
 import { SmartphoneActions, SmartphoneDescription } from './components';
@@ -21,22 +20,15 @@ export const SmartphoneDetails = () => {
     }
 
     useEffect(() => {
-        console.log('renders')
         if (!alreadyCheckedSmartphone) {
-            
-            //removeCookie(currentSmartphone.id)
-            console.log('here')
             dispatch(getSmartphoneDetails(id))
         } 
-        // return () => {
-        //     removeCookie(id)
-        // };
     }, [dispatch])
 
     return (
-        <section className={styles.pdp}>
+        <section>
             {alreadyCheckedSmartphone && 
-                <div style={{display: 'flex', gap: '50px;'}}>
+                <div className={styles.pdp}>
                     <div className={styles.goBackBtnWrapper}>
                         <button
                             className={styles.goBackBtn}

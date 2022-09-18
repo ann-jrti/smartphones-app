@@ -18,7 +18,6 @@ export const getSmartphoneDetails = (id) => (
         if (smartphones) {
             dispatch(setSmartphoneDetails(smartphones.data))
             setCookie(id, JSON.stringify(smartphones.data))
-            console.log('thunk')
         }
     }
 );

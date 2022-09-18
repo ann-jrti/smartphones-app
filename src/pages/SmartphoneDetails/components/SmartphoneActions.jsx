@@ -1,11 +1,16 @@
 import React from 'react';
 import { useFormik } from 'formik'
-import { InputLabel, Typography, MenuItem, Select, FormHelperText, FormControl } from '@mui/material';
+import {
+    InputLabel,
+    Typography,
+    MenuItem,
+    Select,
+    FormHelperText,
+    FormControl
+} from '@mui/material';
 
 import styles from './SmartphoneActions.module.scss';
 import { CustomBtn } from '../../../components/CustomBtn';
-// import { addProductToCart } from '../../../api/requests';
-// import { getCookie, setCookie } from '../../../cookies';
 import { useDispatch } from 'react-redux';
 import { getCart } from '../../../state/cart/cartThunk';
 
@@ -14,25 +19,37 @@ export const SmartphoneActions = ({colors, storages, id, price}) => {
     const formik = useFormik({
         initialValues: {
             id,
-            colorCode: '',
-            storageCode: ''
+            colorCode: 'ewe',
+            storageCode: 'ewe'
         },
         onSubmit: values => dispatch(getCart(values))
     })
-  
+    const setDefaultValue = (options) => {
+        if (options.length === 1) {
+            return options[0].code
+        }
+        return ''
+    }
+
+    const colorsDefaultValue = setDefaultValue(colors)
+    const storagesDefaultValue = setDefaultValue(storages)
+
     const getMenuItems = (options) => {
         return options.map(option => {
             const { name, code } = option;
             return(
                 <MenuItem
-                key={name}
-                value={code}>{name}</MenuItem>
+                    key={name}
+                    value={code}
+                    >
+                    {name}
+                </MenuItem>
             )
         })
     }
     const colorOptions = getMenuItems(colors)
     const storageOptions = getMenuItems(storages)
-
+   
     return (
         <form
             onSubmit={formik.handleSubmit}
@@ -40,6 +57,7 @@ export const SmartphoneActions = ({colors, storages, id, price}) => {
             <FormControl fullWidth>
                 <InputLabel id="color">Select a color</InputLabel>
                     <Select
+                        defaultValue={colorsDefaultValue}
                         required
                         className={styles.selectMenu}
                         name="colorCode"
@@ -55,6 +73,7 @@ export const SmartphoneActions = ({colors, storages, id, price}) => {
             <FormControl fullWidth>
                 <InputLabel id="storages">Select storage</InputLabel>
                     <Select
+                        defaultValue={storagesDefaultValue}
                         required
                         className={styles.selectMenu}
                         name="storageCode"

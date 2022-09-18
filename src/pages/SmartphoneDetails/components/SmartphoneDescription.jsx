@@ -4,7 +4,7 @@ import styles from './SmartphoneDescription.module.scss';
 export const SmartphoneDescription = (props) => {
     const getCamerasFeatures = arr => {
         return(
-            arr.map((features, i) => <p key={i}>{features}</p>)
+            arr.map((features, i) => <li key={i}>{features}</li>)
         )
     }
     return (
