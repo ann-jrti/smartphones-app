@@ -27,7 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "echo ### Starting check lint && eslint src --ext .tsx,.ts --color"
+    "lint": "echo ### Starting check lint && eslint src --ext .jsx,.js --color"
   },
   "eslintConfig": {
     "extends": [
